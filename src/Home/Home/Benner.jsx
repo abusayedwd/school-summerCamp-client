@@ -9,7 +9,7 @@ import slider5 from '../../../public/slider4.avif'
 const Benner = () => {
         return (
                 <div>
-                        <Carousel>
+                        <Carousel autoPlay = {Boolean}>
                 <div>
                     <img src={slider1} />
                     <p className="legend">Legend 1</p>
@@ -23,11 +23,11 @@ const Benner = () => {
                     <p className="legend">Legend 1</p>
                 </div>
                 <div>
-                    <img src={slider4} />
+                    <img src={slider5} />
                     <p className="legend">Legend 1</p>
                 </div>
                 <div>
-                    <img src={slider5} />
+                    <img src={slider4} />
                     <p className="legend">Legend 1</p>
                 </div>
                  

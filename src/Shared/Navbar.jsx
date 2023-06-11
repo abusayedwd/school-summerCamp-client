@@ -1,5 +1,6 @@
  
 import { Link } from 'react-router-dom';
+import logo from '../../public/logo.png'
 
 const Navbar = () => {
         const nabitem = <>
@@ -21,7 +22,10 @@ const Navbar = () => {
               {nabitem}
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">Bristo Boss</a>
+          <Link>
+          <img className='md:h-12 h-10 rounded-full' src={logo} alt="" />
+          </Link>
+          <a className="btn btn-ghost normal-case text-xl">Sports Camp</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
