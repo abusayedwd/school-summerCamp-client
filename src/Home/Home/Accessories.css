@@ -1,0 +1,6 @@
+.accessories-bg{
+        background-image: url('../../../public/accesories/backgr.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+}

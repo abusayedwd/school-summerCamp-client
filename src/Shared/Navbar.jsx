@@ -32,10 +32,10 @@ const Navbar = () => {
               {nabitem}
             </ul>
           </div>
-          <Link>
+          <Link to = '/'>
           <img className='md:h-12 h-10 rounded-full' src={logo} alt="" />
           </Link>
-          <a className="btn btn-ghost normal-case text-xl">Sports Camp</a>
+          <Link to = '/' className="btn btn-ghost normal-case text-xl">Sports Camp</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">

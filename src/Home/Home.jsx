@@ -1,3 +1,4 @@
+import Accessories from './Home/Accessories';
 import Benner from './Home/Benner';
 import PopularClass from './Home/PopularClass';
 import PopularInstructors from './Home/PopularInstructors';
@@ -8,6 +9,7 @@ const Home = () => {
                         <Benner></Benner>
                         <PopularClass></PopularClass>
                         <PopularInstructors></PopularInstructors>
+                        <Accessories></Accessories>
 
                 </div>
         );
