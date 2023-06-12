@@ -22,19 +22,7 @@ const onSubmit = data => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
                 updateUserProfile(data.name, data.photoURL)
-                .then( () => {
-                        const saveUser = {name:data.name, email:data.email}
-                      fetch('http://localhost:5000/users',{
-                        method:'POST',
-                        headers: {
-                                'content-type': 'application/json'
-                        },
-                        body: JSON.stringify(saveUser)
-                      })
-                      .then(res => res.json())
-                      .then(data => {
-                        if(data.insertedId){
-                                reset('')
+                    reset('')
                         Swal.fire({
                                 position: 'top-end',
                                 icon: 'success',
@@ -42,15 +30,14 @@ const onSubmit = data => {
                                 showConfirmButton: false,
                                 timer: 1500
                               })
+                              reset()
                               navigate('/');
-                        }
-                      }) 
+               
                         
                 })
                 .catch(error => {
                         console.log(error)
                 })
-         })
         console.log(data)
 };
  
@@ -58,7 +45,7 @@ const onSubmit = data => {
         return (
                 <div>
                 <Helmet>
-                        <title> Bristo Boss | SignUp </title>
+                        <title> Sports camp | SignUp </title>
                 </Helmet>
                  <div className="hero min-h-screen bg-base-200">
                         <div className="md:flex gap-4">
@@ -77,15 +64,7 @@ const onSubmit = data => {
                                   className="input input-bordered" />
                                  {errors.name && <span className="text-red-600 font-bold">Name is required</span>}
                         </div>
-                        <div className="form-control">
-                                <label className="label">
-                                        <span className="label-text">PhotoURL</span>
-                                </label>
-                                <input type="text" placeholder="Photo url"  
-                                {...register("photoURL", { required: true })}
-                                  className="input input-bordered" />
-                                 {errors.photoURL && <span className="text-red-600 font-bold">Photo Url is required</span>}
-                        </div>
+                        
                         <div className="form-control">
                                 <label className="label">
                                         <span className="label-text">Email</span>
@@ -108,7 +87,28 @@ const onSubmit = data => {
                                 })} placeholder="password" className="input input-bordered" />
                                  {errors.password?.type === 'required' && <span className="text-red-600 font-bold">Password is required</span>}
                                  {errors.password?.type === 'minLength' && <span className="text-red-600 font-bold">Password must be 6 character</span>}
-                                 {errors.password?.type === 'pattern' && <span className="text-red-600 font-bold"> one uppercase one lowercase one number & one spacial case </span>}
+                                 {errors.password?.type === 'pattern' && <span className="text-red-600 font-bold"> one uppercase & one spacial case </span>}
+                        </div>
+                        <div className="form-control">
+                                <label className="label">
+                                        <span className="label-text">Confirm Password</span>
+                                </label>
+                                <input type="password" 
+                                name="confirm"{...register("confirm",  { required: true ,
+                                 
+                                
+                                })} placeholder="Confirm password" className="input input-bordered" />
+                                 {errors.confirm?.type === 'required' && <span className="text-red-600 font-bold">Confirm Password is required</span>}
+                                  
+                        </div>
+                        <div className="form-control">
+                                <label className="label">
+                                        <span className="label-text">PhotoURL</span>
+                                </label>
+                                <input type="text" placeholder="Photo url"  
+                                {...register("photoURL", { required: true })}
+                                  className="input input-bordered" />
+                                 {errors.photoURL && <span className="text-red-600 font-bold">Photo Url is required</span>}
                         </div>
                          
                         <div className="form-control mt-6">
