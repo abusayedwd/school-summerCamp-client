@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 
 import signup1 from '../../public/signup.avif'
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider";
 import Swal from "sweetalert2";
 
@@ -15,7 +15,15 @@ const Signup = () => {
         const {createUser, updateUserProfile} = useContext(AuthContext)
          const navigate = useNavigate()
 
+         const [error, setError] = useState("")
 const onSubmit = data => {
+        const form = event.target;
+        const password = form.password.value;
+        const confirm = form.confirm.value;
+        if(password !== confirm){
+                setError('Password & Confirm password nor match')
+                return ;
+        }
          createUser(data.email, data.password)
          
          .then(result => {
@@ -94,8 +102,7 @@ const onSubmit = data => {
                                         <span className="label-text">Confirm Password</span>
                                 </label>
                                 <input type="password" 
-                                name="confirm"{...register("confirm",  { required: true ,
-                                 
+                                name="confirm"{...register("confirm",  { required: true , 
                                 
                                 })} placeholder="Confirm password" className="input input-bordered" />
                                  {errors.confirm?.type === 'required' && <span className="text-red-600 font-bold">Confirm Password is required</span>}
@@ -110,6 +117,7 @@ const onSubmit = data => {
                                   className="input input-bordered" />
                                  {errors.photoURL && <span className="text-red-600 font-bold">Photo Url is required</span>}
                         </div>
+                        <p>{error}</p>
                          
                         <div className="form-control mt-6">
                                 <input className="btn btn-primary" type="submit" value="SignUp" />

@@ -1,12 +1,11 @@
-import React, { useContext } from 'react';
-import useClass from '../../Hooks/useClass';
+import { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const AddClasses = ({clas}) => {
         const {name,image, instructor,available_seats, number_of_students,price,_id} = clas;
-        // const [ refetch] = useClass()
+         
         const {user} = useContext(AuthContext)
         const navigate = useNavigate();
         const location = useLocation()
@@ -35,20 +34,36 @@ const AddClasses = ({clas}) => {
                        .then(res => res.json())
                        .then(data => {
                           if(data.insertedId){
-                        //    refetch();
-                           Swal.fire({
-                             position: 'top-end',
-                             icon: 'success',
-                             title: 'Your Class is Selected',
-                             showConfirmButton: false,
-                             timer: 1500
-                           })
+                                Swal.fire({
+                                        title: 'Are you sure?',
+                                        text: "You won't be able to select class",
+                                        icon: 'warning',
+                                        showCancelButton: true,
+                                        confirmButtonColor: '#3085d6',
+                                        cancelButtonColor: '#d33',
+                                        confirmButtonText: 'Yes, Selected'
+                                      }).then((result) => {
+                                        if (result.isConfirmed) {
+                                          Swal.fire(
+                                            'Deleted!',
+                                            'Your file has been deleted.',
+                                            'success'
+                                          )
+                                        }
+                                      })
+                        //    Swal.fire({
+                        //      position: 'top-end',
+                        //      icon: 'success',
+                        //      title: 'Your Class is Selected',
+                        //      showConfirmButton: false,
+                        //      timer: 1500
+                        //    })
                           }
                        })
                      }
                      else{
                        Swal.fire({
-                         title: 'Please Login to Order the food',
+                         title: 'Please Login to Select the Class',
                          icon: 'warning',
                          showCancelButton: true,
                          confirmButtonColor: '#3085d6',
