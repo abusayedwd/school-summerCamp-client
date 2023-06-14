@@ -9,6 +9,8 @@ import Signup from "../Authentication/Signup";
 import Instructors from "../Home/Pages/Instructors";
 import Classes from "../Home/Pages/Classes";
 import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../Layout/Dashboard";
+import Myclass from "../Home/Pages/Dashboard/MyClass/Myclass";
  
  
 
@@ -41,4 +43,14 @@ import PrivateRoute from "./PrivateRoute";
                 }
           ]
         },
+        {
+                path:'dashboard',
+                element:<Dashboard></Dashboard>,
+                children: [
+                        {
+                                path:'myclass',
+                                element:<Myclass></Myclass>
+                        }
+                ]
+        }
       ]);

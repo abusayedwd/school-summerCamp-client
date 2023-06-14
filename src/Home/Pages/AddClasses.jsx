@@ -19,7 +19,7 @@ const AddClasses = ({clas}) => {
                          price,
                          image,
                          email:user.email,
-                         itemId:_id,
+                         classId:_id,
                          instructor,available_seats, 
                          number_of_students
                         };
@@ -45,19 +45,12 @@ const AddClasses = ({clas}) => {
                                       }).then((result) => {
                                         if (result.isConfirmed) {
                                           Swal.fire(
-                                            'Deleted!',
-                                            'Your file has been deleted.',
+                                            'Your Class has been Selected.',
                                             'success'
                                           )
                                         }
                                       })
-                        //    Swal.fire({
-                        //      position: 'top-end',
-                        //      icon: 'success',
-                        //      title: 'Your Class is Selected',
-                        //      showConfirmButton: false,
-                        //      timer: 1500
-                        //    })
+                         
                           }
                        })
                      }
