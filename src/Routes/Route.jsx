@@ -11,6 +11,7 @@ import Classes from "../Home/Pages/Classes";
 import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../Layout/Dashboard";
 import Myclass from "../Home/Pages/Dashboard/MyClass/Myclass";
+import Homepage from "../Home/Pages/Dashboard/Homepage";
  
  
 
@@ -47,6 +48,10 @@ import Myclass from "../Home/Pages/Dashboard/MyClass/Myclass";
                 path:'dashboard',
                 element:<Dashboard></Dashboard>,
                 children: [
+                        {
+                                path:'home',
+                                element:<Homepage></Homepage>
+                        },
                         {
                                 path:'myclass',
                                 element:<Myclass></Myclass>
