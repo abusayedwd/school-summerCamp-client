@@ -7,6 +7,7 @@ import Errorpage from "../Errorpage";
 import Login from "../Authentication/Login";
 import Signup from "../Authentication/Signup";
 import Instructors from "../Home/Pages/Instructors";
+import Classes from "../Home/Pages/Classes";
  
  
 
@@ -32,6 +33,10 @@ import Instructors from "../Home/Pages/Instructors";
                 {
                         path:'instructor',
                         element: <Instructors></Instructors>
+                },
+                {
+                        path:'classes',
+                        element:<Classes></Classes>
                 }
           ]
         },

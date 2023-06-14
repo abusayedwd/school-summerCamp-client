@@ -7,50 +7,18 @@ const PopularInstructors = () => {
                 <div className='my-10'>
                     <h1 className="mt-16 mb-8 underline text-3xl text-orange-200 text-center font-bold">Popular Instructors : {instructors.slice(0,6).length}</h1> 
 
-                    <div className="overflow-x-auto">
-  <table className="table table-zebra">
-    {/* head */}
-    <thead>
-      <tr>
-        <th>
-          #
-        </th>
-        <th>Picture</th>
-        <th>Name</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody>
+                    <div className='grid md:grid-cols-3 '>
+   
       { 
-        instructors.slice(0, 6).map((inst, index) => 
-                <tr  key={inst._id}>
-        <th>
-           {index + 1}
-        </th>
-        <td>
-        
-            <div className="avatar">
-              <div className="mask mask-squircle w-12 h-12">
-                <img src= {inst.image} alt="Avatar Tailwind CSS Component" />
-              </div>
-            </div>
-             
-        </td>
-        <td>
-           {inst.name}
-        </td>
-        <td>{inst.email}</td>
-         
-      </tr>
+        instructors.slice(0, 6).map(inst  => 
+                <div className='p-8 ml-12 border-4 m-4' key={inst._id}>
+                        <img className='h-36 w-40 rounded-3xl' src={inst.image} alt="" />
+                        <h1>Name: {inst.name}</h1>
+                        <p>Class :{inst.class}</p>
+                </div>
                 )
-      }
-      
-      
-    </tbody>
- 
-     
-    
-  </table>
+      } 
+  
 </div>   
                 </div>
         );
