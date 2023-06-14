@@ -16,8 +16,7 @@ const PopularClass = () => {
                           <img src={clas.image} alt="Shoes" className="rounded-xl h-60" />
                         </figure>
                         <div className="card-body  ">
-                          <h2 className="card-title">Game : {clas.name}</h2>
-                          
+                          <h2 className="card-title">Game : {clas.name}</h2> 
                        <small>Students : {clas.number_of_students}</small>
 
                           <small>Price: ${clas.price}</small>
