@@ -8,7 +8,7 @@ const Instructors = () => {
 
 
                 <div className='py-32'>
-                      {/* <h1 className="mb-8 border-b-2 text-3xl text-orange-200 text-center font-bold">All Instructor : {instructors.length}</h1>   */}
+                      <h1 className="mb-8 border-b-2 text-3xl text-orange-200 text-center font-bold">All Instructor : {instructors.length}</h1>  
                       <div className="overflow-x-auto">
   <table className="table table-zebra">
     {/* head */}
