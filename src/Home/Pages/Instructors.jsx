@@ -1,13 +1,15 @@
  
 import useInstructor from '../../Hooks/useInstructor';
 
-const PopularInstructors = () => {
-        const [instructors] = useInstructor();
+const Instructors = () => {
+        const [instructors] = useInstructor()
         return (
-                <div className='my-10'>
-                    <h1 className="mt-16 mb-8 underline text-3xl text-orange-200 text-center font-bold">Popular Instructors : {instructors.slice(0,6).length}</h1> 
 
-                    <div className="overflow-x-auto">
+
+
+                <div className='py-32'>
+                      {/* <h1 className="mb-8 border-b-2 text-3xl text-orange-200 text-center font-bold">All Instructor : {instructors.length}</h1>   */}
+                      <div className="overflow-x-auto">
   <table className="table table-zebra">
     {/* head */}
     <thead>
@@ -22,7 +24,7 @@ const PopularInstructors = () => {
     </thead>
     <tbody>
       { 
-        instructors.slice(0, 6).map((inst, index) => 
+        instructors.map((inst, index) => 
                 <tr  key={inst._id}>
         <th>
            {index + 1}
@@ -51,9 +53,9 @@ const PopularInstructors = () => {
      
     
   </table>
-</div>   
+</div>     
                 </div>
         );
 };
 
-export default PopularInstructors;
+export default Instructors;

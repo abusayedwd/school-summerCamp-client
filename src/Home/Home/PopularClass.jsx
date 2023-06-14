@@ -7,7 +7,7 @@ const PopularClass = () => {
         console.log(classes) 
         return (
                 <div>
-                        <h1 className="mt-16 mb-8 underline text-3xl text-orange-200 text-center font-bold">Popular Class : {classes.slice(0,6).length}</h1>
+                        <h1 className="mt-16 mb-8 border-b-2 text-3xl text-orange-200 text-center font-bold">Popular Class : {classes.slice(0,6).length}</h1>
                 <div className="grid md:grid-cols-3 gap-4 mb-10">
                       {
                         classes.slice(0,6).map(clas => 
