@@ -8,6 +8,7 @@ import Login from "../Authentication/Login";
 import Signup from "../Authentication/Signup";
 import Instructors from "../Home/Pages/Instructors";
 import Classes from "../Home/Pages/Classes";
+import PrivateRoute from "./PrivateRoute";
  
  
 

@@ -17,14 +17,11 @@ const PopularClass = () => {
                         </figure>
                         <div className="card-body  ">
                           <h2 className="card-title">Game : {clas.name}</h2>
-                          <p>Instructor Name : {clas.instructor}</p>
-                  <small> Available seats : {clas.available_seats}</small>
-                  <small>Students : {clas.number_of_students}</small>
+                          
+                       <small>Students : {clas.number_of_students}</small>
 
                           <small>Price: ${clas.price}</small>
-                          <div className="card-actions">
-                            <button className="btn btn-primary">Buy Now</button>
-                          </div>
+                           
                         </div>
                       </div>)
                       } 
