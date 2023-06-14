@@ -8,10 +8,11 @@ import Login from "../Authentication/Login";
 import Signup from "../Authentication/Signup";
 import Instructors from "../Home/Pages/Instructors";
 import Classes from "../Home/Pages/Classes";
-import PrivateRoute from "./PrivateRoute";
 import Dashboard from "../Layout/Dashboard";
 import Myclass from "../Home/Pages/Dashboard/MyClass/Myclass";
 import Homepage from "../Home/Pages/Dashboard/Homepage";
+import EnrolledClass from "../Home/Pages/Dashboard/EnrolledClass";
+import Paymenthistory from "../Home/Pages/Dashboard/Paymenthistory";
  
  
 
@@ -55,6 +56,14 @@ import Homepage from "../Home/Pages/Dashboard/Homepage";
                         {
                                 path:'myclass',
                                 element:<Myclass></Myclass>
+                        },
+                        {
+                                path:'enrollclass',
+                                element:<EnrolledClass></EnrolledClass>
+                        },
+                        {
+                                path:'history',
+                                element:<Paymenthistory></Paymenthistory>
                         }
                 ]
         }
