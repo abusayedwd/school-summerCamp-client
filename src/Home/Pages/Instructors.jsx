@@ -1,4 +1,5 @@
  
+import { Helmet } from 'react-helmet-async';
 import useInstructor from '../../Hooks/useInstructor';
 import Cover from '../../cover/Cover';
 
@@ -9,6 +10,9 @@ const Instructors = () => {
 
 
                 <div className=' mb-8'>
+                  <Helmet>
+                        <title> Sports camp | Instructor </title>
+                </Helmet>
                         <Cover></Cover>
                       <h1 className="mb-8 border-b-2 text-3xl text-orange-200 text-center mt-6 font-bold">All Instructor : {instructors.length}</h1>  
               <div className="overflow-x-auto">

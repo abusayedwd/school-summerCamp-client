@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
+import { Helmet } from 'react-helmet-async';
 import { FaTrashAlt, } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
@@ -55,6 +56,9 @@ const Usermanage = () => {
 
         return (
                 <div>
+                 <Helmet>
+                        <title> Sports camp | Users manage </title>
+                </Helmet>
                         <h1 className='text-2xl font-bold text-gray-400'>All Users : {users.length}</h1>
                         <div className="overflow-x-auto">
   <table className="table ">

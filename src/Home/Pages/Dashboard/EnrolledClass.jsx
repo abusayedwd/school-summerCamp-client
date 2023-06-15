@@ -1,8 +1,13 @@
+import { Helmet } from "react-helmet-async";
+
  
 
 const EnrolledClass = () => {
         return (
                 <div>
+                <Helmet>
+                        <title> Sports camp | EnrollClass </title>
+                </Helmet>
                         <h1>Enrolled Classes :</h1>
                         <table className="table ">
     {/* head */}

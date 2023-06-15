@@ -3,11 +3,15 @@ import { Link, Outlet } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 import { FaBook, FaBookDead, FaHistory, FaHome, FaUser } from 'react-icons/fa';
 import logo from '../../public/logo.png'
+import { Helmet } from 'react-helmet-async';
 
 const Dashboard = () => {
      
         return (
                 <div className="drawer lg:drawer-open">
+                  <Helmet>
+                        <title> Sports camp | DashBoard </title>
+                </Helmet>
   <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
   <div className="drawer-content flex flex-col items-center justify-center">
     {/* Page content here */}
