@@ -13,6 +13,7 @@ import Myclass from "../Home/Pages/Dashboard/MyClass/Myclass";
 import Homepage from "../Home/Pages/Dashboard/Homepage";
 import EnrolledClass from "../Home/Pages/Dashboard/EnrolledClass";
 import Paymenthistory from "../Home/Pages/Dashboard/Paymenthistory";
+import Usermanage from "../Home/Pages/Dashboard/Usermanage";
  
  
 
@@ -64,6 +65,10 @@ import Paymenthistory from "../Home/Pages/Dashboard/Paymenthistory";
                         {
                                 path:'history',
                                 element:<Paymenthistory></Paymenthistory>
+                        },
+                        {
+                                path:'users',
+                                element:<Usermanage></Usermanage>
                         }
                 ]
         }

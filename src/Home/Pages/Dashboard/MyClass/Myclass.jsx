@@ -2,6 +2,7 @@
 import Swal from 'sweetalert2';
 import useSelectClass from '../../../../Hooks/useSelectClass';
 import { FaTrashAlt, } from 'react-icons/fa';
+import { Helmet } from 'react-helmet-async';
 
 const Myclass = () => {
         const [selectClass,refetch] = useSelectClass()
@@ -38,6 +39,9 @@ const Myclass = () => {
          
         return (
                 <div>
+                  <Helmet>
+                        <title> Sports camp | Select Class </title>
+                </Helmet>
                         <h1 className='text-2xl font-serif font-bold '>My Selected Classes : {selectClass.length}</h1>
               <div className="overflow-x-auto">
   <table className="table ">
