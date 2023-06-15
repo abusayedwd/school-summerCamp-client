@@ -3,12 +3,18 @@ import logo from '../../public/logo.png'
 
 const Footer = () => {
         return (
-                <div>
+                <div className="pb-8">
                        <footer className="footer p-10 bg-neutral text-neutral-content">
   <div>
   <img className='md:h-12 h-10 rounded-full' src={logo} alt="" />
     <p>SPORTS Industries Ltd.<br/>Providing reliable tech since 2022</p>
   </div> 
+  <div>
+  <h1 className="font-bold text-slate-500">CONTACT US</h1>
+  <p>Phone : +00886734</p>
+  <p>Email : sports@gmail.com</p>
+  <p>Address : Gulsan , Dhaka</p>
+  </div>
   <div>
     <span className="footer-title">Social</span> 
     <div className="grid grid-flow-col gap-4">
@@ -18,8 +24,8 @@ const Footer = () => {
     </div>
   </div>
 </footer> 
-  <div className="footer footer-center p-4 bg-base-300 text-base-content">
-    <p>Copyright © {moment().format('MMMM Do YYYY, h:mm:ss a')} - All right reserved by SPORTS Industries Ltd</p>
+  <div className="footer footer-center p-4 bg-red-400 text-base-content">
+    <p className="font-bold">Copyright © {moment().format('MMMM Do YYYY, h:mm:ss a')} - All right reserved by SPORTS Industries Ltd</p>
   </div>
                 </div>
         );

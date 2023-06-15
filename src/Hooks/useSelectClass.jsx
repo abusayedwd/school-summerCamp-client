@@ -10,7 +10,7 @@ const useSelectClass = () => {
          const { refetch,  data: selectClass = []} = useQuery({
                 queryKey: ['addClass', user?.email],
                 queryFn: async () => {
-                        const res = await fetch(`http://localhost:5000/addClass?email=${user?.email}`)
+                        const res = await fetch(`https://sports-summercmp-server-abusayedwd.vercel.app/addClass?email=${user?.email}`)
 
                         return res.json();
                 },

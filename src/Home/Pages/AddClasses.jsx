@@ -23,7 +23,7 @@ const AddClasses = ({clas}) => {
                          instructor,available_seats, 
                          number_of_students
                         };
-                       fetch('http://localhost:5000/addClass' , {
+                       fetch('https://sports-summercmp-server-abusayedwd.vercel.app/addClass' , {
                          method:'post',
                          headers:{
                            'content-type': 'application/json'

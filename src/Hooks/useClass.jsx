@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
         const { refetch,  data: classes = []} = useQuery({
                 queryKey: ['classes'],
                 queryFn: async () => {
-                        const res = await fetch('http://localhost:5000/classes')
+                        const res = await fetch('https://sports-summercmp-server-abusayedwd.vercel.app/classes')
 
                         return res.json();
                 },

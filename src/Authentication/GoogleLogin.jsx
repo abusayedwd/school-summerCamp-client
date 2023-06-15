@@ -19,7 +19,7 @@ const GoogleLogin = () => {
                         const loggedUsr = result.user;
                         console.log(loggedUsr)
                         const userInfo = {name:loggedUsr.name, email:loggedUsr.email,photo:loggedUsr.photoURL}
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://sports-summercmp-server-abusayedwd.vercel.app/users', {
                                 method:'POST',
                                 headers:{
                                         'content-type': 'application/json'
