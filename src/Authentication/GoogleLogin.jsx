@@ -18,8 +18,20 @@ const GoogleLogin = () => {
                 .then( result => {
                         const loggedUsr = result.user;
                         console.log(loggedUsr)
-                          navigate(from, {replace: true})
-                          })  
+                        const userInfo = {name:loggedUsr.name, email:loggedUsr.email,photo:loggedUsr.photoURL}
+                        fetch('http://localhost:5000/users', {
+                                method:'POST',
+                                headers:{
+                                        'content-type': 'application/json'
+                                },
+                                body:JSON.stringify(userInfo)
+                        })
+                        .then(res => res.json())
+                        .then( () => {  
+                                 navigate(from, {replace: true})
+                                
+                        })
+                }) 
                 .catch(error => console.log(error))
         }
 

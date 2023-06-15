@@ -30,23 +30,39 @@ const onSubmit = data => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
                 updateUserProfile(data.name, data.photoURL)
-                    reset('')
-                        Swal.fire({
-                                position: 'top-end',
-                                icon: 'success',
-                                title: 'Your work has been saved',
-                                showConfirmButton: false,
-                                timer: 1500
-                              })
-                              reset()
-                              navigate('/');
-               
-                        
+                .then( () => {
+                        const userInfo = {name:data.name, email:data.email,photo:data.photoURL}
+                        fetch('http://localhost:5000/users', {
+                                method:'POST',
+                                headers:{
+                                        'content-type': 'application/json'
+                                },
+                                body:JSON.stringify(userInfo)
+                        })
+                        .then(res => res.json())
+                        .then(data => {
+                                if(data.insertedId){
+                                        console.log(data)
+                                        reset('')
+                                        Swal.fire({
+                                                position: 'top-end',
+                                                icon: 'success',
+                                                title: 'Your work has been saved',
+                                                showConfirmButton: false,
+                                                timer: 1500
+                                              })
+                                              navigate('/');
+                               
+                                }
+                        })
                 })
-                .catch(error => {
-                        console.log(error)
-                })
-        console.log(data)
+                   
+        })
+        
+         .catch(error => {
+               console.log(error)
+          })
+        
 };
  
 
